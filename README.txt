@@ -1,27 +1,31 @@
-RAAHAT DELHI — FIRST WEBSITE PROTOTYPE
+RAAHAT DELHI — SIMPLE MOBILE REDESIGN (V2)
 
-CONTENTS
-- index.html: the complete mobile-friendly website; location data is embedded in the file.
+FILES TO UPLOAD TO GITHUB
+- index.html: bilingual, high-contrast mobile-first website
+- data.json: 1,213 de-duplicated pilot location records
 
-TEST ON YOUR COMPUTER
-1. Keep internet connected (Leaflet and map tiles load online).
-2. Open index.html in Chrome or Edge.
-3. Click All points / Drinking water / Toilets.
-4. Click Find nearest to me and allow location access. Browser geolocation usually requires HTTPS or localhost; for reliable testing use the hosted HTTPS website.
+DATA SUMMARY
+Original spreadsheet: 1,216 rows. Three exact duplicate rows removed.
+- 956 toilet records
+- 257 water records (235 drinking_water + 22 water_point)
+Total: 1,213 unique records.
+The spreadsheet has coordinates and type only; no names, addresses, hours, access, fee, or live condition. Every point is therefore labelled not verified.
 
-PUBLISH FREE WITH GITHUB PAGES
-1. Create/sign in to a GitHub account at https://github.com/.
-2. Create a new PUBLIC repository named raahat-delhi.
-3. Upload index.html from this folder and commit the change.
-4. In the repository, open Settings → Pages.
-5. Under Build and deployment, choose Deploy from a branch; select main and /(root), then Save.
-6. Wait for the Pages URL shown in Settings → Pages. Open it on a phone and test location permission.
+OPTIONAL EXTRA DATA
+The website has a button to fetch additional community-mapped drinking-water and toilet points from OpenStreetMap via Overpass. This happens only when a visitor taps the button; it may fail due to network/rate limits. OSM points are attributed and labelled unverified. OSM data is ODbL; attribution is included in the site. Review https://www.openstreetmap.org/copyright before redistributing extracts.
 
-IMPORTANT DATA NOTE
-The source spreadsheet had 1,216 rows. This prototype removes 3 exact duplicate rows, leaving 1,213 records. Records labelled toilets are shown as toilets. drinking_water and water_point are both shown as drinking-water points. If two different source types share coordinates, both records are retained. The spreadsheet has no names, addresses, hours, accessibility, price, or operational-status fields. Therefore all points are clearly marked NOT VERIFIED. Physically verify facilities before promoting them as available.
+GITHUB PAGES DEPLOYMENT (EXISTING REPOSITORY)
+1. Open https://github.com/Piyush767827/Raahat
+2. Click Add file → Upload files.
+3. Drag BOTH index.html and data.json from this folder into the upload area. (Do not upload the ZIP.)
+4. If GitHub asks whether to replace index.html, choose replace/overwrite.
+5. Scroll down to Commit changes. Keep branch main and click Commit changes.
+6. Open Settings → Pages. Confirm Deploy from a branch, branch main, folder /(root). Do not change if already selected.
+7. Wait 1–3 minutes, then open https://piyush767827.github.io/Raahat/ on your phone. Refresh the page.
+8. Test Hindi/English, Drinking water/Public toilet, then FIND NEAR ME and allow location. Location works only on HTTPS and when browser permission is allowed.
 
-MAP NOTE
-This prototype uses Leaflet and OpenStreetMap tiles. Keep the visible OpenStreetMap attribution. OpenStreetMap's public tile servers are best-effort and have a usage policy; they are suitable for a small pilot, not unlimited high-volume production. Review https://operations.osmfoundation.org/policies/tiles/ before scaling.
-
-NEXT DATA IMPROVEMENT
-Add columns for facility name, exact address/landmark, access (public/restricted), hours, water/toilet availability, fee, accessibility, last_verified_date, and verifier_notes.
+IMPORTANT
+- Both files must be in the repository root (same level), not inside a subfolder.
+- The website needs internet for map links and optional OpenStreetMap data. The core saved list loads from data.json.
+- Test on mobile data as well as Wi-Fi. If an older version appears, refresh or clear that site's cached data.
+- The OSM live add-on is community data, not official municipal verification. Do not describe any pin as operational until someone checks it on the ground.
